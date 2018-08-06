@@ -2,7 +2,6 @@ import path from 'path';
 import fs from 'fs';
 import diff from '../src/diff';
 
-
 const getFixturePath = fileName => path.join(__dirname, '__fixtures__', fileName);
 
 test('compare json files', () => {
