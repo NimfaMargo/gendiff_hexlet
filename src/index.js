@@ -1,3 +1,3 @@
-import diff from '../src/bin/gendiff';
+import diff from './diff';
 
 export default diff;
