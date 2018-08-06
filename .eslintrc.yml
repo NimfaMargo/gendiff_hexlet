@@ -1,12 +1,17 @@
 env:
   node: true
+  jest: true
 
-extends: airbnb-base
+extends:
+ - 'airbnb-base'
+ - 'plugin:jest/recommended'
+
 
 parser: babel-eslint
 
 plugins:
   - babel
+  - jest
 
 rules:
   no-console: 0
