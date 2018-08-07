@@ -1,18 +1,10 @@
 import _ from 'lodash';
-import fs from 'fs';
+import parse from './parse';
 
-export const parse = (filePath) => {
-  const newStr = fs.readFileSync(`${filePath}`, 'utf-8');
-
-  if (newStr.length === 0) {
-    throw new Error("File can't be empty");
-  }
-  return JSON.parse(newStr);
-};
 const diff = (filePath1, filePath2) => {
   const obj1 = parse(filePath1);
   const obj2 = parse(filePath2);
-  const uniqValues = _.union(Object.keys(obj1), Object.keys(obj2), 'utf-8');
+  const uniqValues = _.union(Object.keys(obj1), Object.keys(obj2));
 
   const newArr = uniqValues.reduce((acc, el) => {
     if (_.has(obj2, el) && obj1[el] === obj2[el]) { // host
