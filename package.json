@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "commander": "^2.16.0",
+    "jest-context": "^2.1.0",
     "lodash": "^4.17.10",
     "readline-sync": "^1.4.9"
   }
