@@ -1,7 +1,10 @@
 import _ from 'lodash';
 import parse from './parse';
+import validateFilesFormats from './validators';
 
 const diff = (filePath1, filePath2) => {
+  validateFilesFormats(filePath1, filePath2);
+
   const obj1 = parse(filePath1);
   const obj2 = parse(filePath2);
   const uniqValues = _.union(Object.keys(obj1), Object.keys(obj2));
