@@ -1,9 +1,13 @@
 import _ from 'lodash';
 import fs from 'fs';
 
-const parse = (filePath) => {
+export const parse = (filePath) => {
   const newStr = fs.readFileSync(`${filePath}`, 'utf-8');
-  return newStr.length === 0 ? {} : JSON.parse(newStr);
+
+  if (newStr.length === 0) {
+    throw new Error("File can't be empty");
+  }
+  return JSON.parse(newStr);
 };
 const diff = (filePath1, filePath2) => {
   const obj1 = parse(filePath1);
@@ -16,7 +20,7 @@ const diff = (filePath1, filePath2) => {
     } else if (_.has(obj2, el) && !(_.has(obj1, el))) {
       return [...acc, { key: el, value: obj2[el], type: 'new' }];
     } else if (!(_.has(obj2, el))) {
-      return [...acc, { key: el, value: obj1[el], type: 'delete' }];
+      return [...acc, { key: el, value: obj1[el], type: 'deleted' }];
     } else if (_.has(obj2, el) && (obj1[el] !== obj2[el])) {
       return [...acc, {
         key: el,
@@ -35,7 +39,7 @@ const diff = (filePath1, filePath2) => {
       return acc.concat(`  + ${el.key}: ${el.value2}\n  - ${el.key}: ${el.value1}\n`);
     } else if (el.type === 'new') {
       return acc.concat(`  + ${el.key}: ${el.value}\n`);
-    } else if (el.type === 'delete') {
+    } else if (el.type === 'deleted') {
       return acc.concat(`  - ${el.key}: ${el.value}\n`);
     }
     return acc;
