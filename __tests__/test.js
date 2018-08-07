@@ -1,7 +1,9 @@
+import path from 'path';
 import context from 'jest-context';
 import fs from 'fs';
 import diff from '../src';
-import getFixturePath from './support/fixture_path';
+
+const getFixturePath = fileName => path.join(__dirname, '__fixtures__', fileName);
 
 describe('.diff', () => {
   context('compare json files', () => {
