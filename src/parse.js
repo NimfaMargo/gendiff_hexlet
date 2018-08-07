@@ -3,15 +3,13 @@ import fs from 'fs';
 import yamlParser from 'js-yaml';
 import path from 'path';
 
-const getFileFormat = filePath => path.extname(filePath);
-
 const selectPropperFormat = (filePath) => {
   const selector = {
     '.json': str => JSON.parse(str),
     '.yaml': str => yamlParser.safeLoad(str),
     '.ini': str => ini.parse(str),
   };
-  return selector[getFileFormat(filePath)];
+  return selector[path.extname(filePath)];
 };
 
 const parse = (filePath) => {
