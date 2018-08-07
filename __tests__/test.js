@@ -1,4 +1,5 @@
 import path from 'path';
+import context from 'jest-context';
 import fs from 'fs';
 import diff from '../src';
 import { parse } from '../src/diff';
@@ -11,8 +12,31 @@ test('compare json files', () => {
   expect(result).toBe(expected);
 });
 
-test('trows error ', () => {
-  expect(() => {
-    parse(getFixturePath('after2.json'));
-  }).toThrow("File can't be empty");
+describe('.parse', () => {
+  context('when json file is valid', () => {
+    it('returns parsed object', () => {
+      const subject = parse(getFixturePath('valid.json'));
+      const expected = {
+        timeout: 20,
+        verbose: true,
+        host: 'hexlet.io',
+      };
+
+      expect(subject).toEqual(expected);
+    });
+  });
+  context('when json file is invalid', () => {
+    it('raises format error', () => {
+      expect(() => {
+        parse(getFixturePath('invalid.json'));
+      }).toThrow();
+    });
+  });
+  context('when json file is empty', () => {
+    it('raises error', () => {
+      expect(() => {
+        parse(getFixturePath('empty.json'));
+      }).toThrow("File can't be empty");
+    });
+  });
 });

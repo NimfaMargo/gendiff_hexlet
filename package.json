@@ -17,7 +17,10 @@
     "gendiff": "dist/bin/gendiff.js"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "setupFiles": [
+      "jest-context/setup"
+    ]
   },
   "author": "Nikiforova Margarita",
   "license": "ISC",
