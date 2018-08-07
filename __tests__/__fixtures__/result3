@@ -1,0 +1,8 @@
+{
+    av: a val
+  + e: j
+  - e: { o: p, a: { av: a val, b: { c: { e: "this [value]" } } } }
+    j: "{ o: "p", a: { av: "a val", b: { c: { e: "this [value]" } } } }"
+  - []: a square?
+  + a.b.c: a
+}

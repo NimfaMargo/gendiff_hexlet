@@ -24,7 +24,7 @@ describe('.diff', () => {
       context('compare ini files', () => {
         it('returns difference in ini files', () => {
           const result = diff(getFixturePath('before.ini'), getFixturePath('after.ini'));
-          const expected = fs.readFileSync(getFixturePath('result'), 'utf-8');
+          const expected = fs.readFileSync(getFixturePath('result3'), 'utf-8');
           expect(result).toEqual(expected);
         });
       });
