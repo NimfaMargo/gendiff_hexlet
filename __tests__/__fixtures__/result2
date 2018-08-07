@@ -1,0 +1,8 @@
+{
+    host: localhost
+    port: 80
+  - user: root
+  + homedir: /var/client/margo
+  - homedir: /var/client/home
+  + date1: Wed Aug 08 2018 14:00:00 GMT+0300 (MSK)
+}
