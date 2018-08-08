@@ -1,4 +1,4 @@
 host: localhost
 port: 80
 homedir: /var/client/margo
-date1: 2018-08-08t11:00:00
+build: ./dir
