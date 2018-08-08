@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const diff = (obj1, obj2) => {
+const findDiffrence = (obj1, obj2) => {
   const uniqValues = _.union(Object.keys(obj1), Object.keys(obj2));
 
   const newArr = uniqValues.reduce((acc, el) => {
@@ -36,4 +36,4 @@ const diff = (obj1, obj2) => {
   return `{\n${result}}\n`;
 };
 
-export default diff;
+export default findDiffrence;
