@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import parse from './parse';
 import findDiffrence from './ast';
-import render from './renders/recursive_render';
+import render from './renderers/recursive_render';
 
 export default (filePath1, filePath2) => {
   const format1 = path.extname(filePath1);

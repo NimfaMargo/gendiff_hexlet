@@ -21,7 +21,7 @@ const astDiff = (obj1, obj2) => {
       key: el,
       value1: obj1[el],
       value2: obj2[el],
-      type: 'modiffied',
+      type: 'changed',
     };
   };
   return uniqValues.map(iter);
