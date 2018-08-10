@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import parse from './parse';
-import findDiffrence from './ast';
+import makeAst from './ast';
 import render from './renderers';
 
 export default (filePath1, filePath2, format = 'recursive') => {
@@ -15,5 +15,5 @@ export default (filePath1, filePath2, format = 'recursive') => {
   }
   const parsed1 = parse(format1, firstFileData);
   const parsed2 = parse(format2, secondFileData);
-  return render(findDiffrence(parsed1, parsed2), format);
+  return render(makeAst(parsed1, parsed2), format);
 };

@@ -6,4 +6,4 @@ const selector = {
   plain: plainRender,
 };
 
-export default (ast, format) => selector[format](ast)
+export default (ast, format) => selector[format](ast);
