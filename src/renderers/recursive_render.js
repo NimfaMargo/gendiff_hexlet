@@ -27,7 +27,7 @@ const render = (ast) => {
     return _.flatten(newArr).join('\n');
   };
 
-  return `{\n${iter(ast, 0)}\n}\n`;
+  return `{\n${iter(ast, 0)}\n}`;
 };
 
 export default render;
