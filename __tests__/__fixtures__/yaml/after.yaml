@@ -1,4 +1,3 @@
-host: localhost
-port: 80
-homedir: /var/client/margo
-build: ./dir
+timeout: 20
+verbose: true
+host: hexlet.io

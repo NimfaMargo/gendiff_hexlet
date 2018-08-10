@@ -11,16 +11,14 @@
     "setting6": {
       "key": "value",
       "ops": "vops"
-    },
-    "follow": false
+    }
   },
-
+  "follow": false,
   "group1": {
     "foo": "bar",
     "baz": "bars",
     "nest": "str"
   },
-
   "group3": {
     "fee": "100500"
   }

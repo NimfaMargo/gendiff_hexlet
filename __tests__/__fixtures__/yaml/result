@@ -1,8 +1,0 @@
-{
-    host: localhost
-    port: 80
-  - user: root
-  + homedir: /var/client/margo
-  - homedir: /var/client/home
-  + build: ./dir
-}
