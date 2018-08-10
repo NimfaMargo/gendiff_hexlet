@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const getIndent = depth => '    '.repeat(depth);
 
 const stringify = (value, depth = 0) => {
@@ -21,15 +23,10 @@ const render = (ast) => {
       object: obj => [`${getIndent(depth)}    ${obj.key}: {`, iter(obj.children, depth + 1), `${getIndent(depth)}    }`],
     };
 
-
-    return arr.reduce((acc, obj) => {
-      const result = propperString[obj.type](obj);
-      if (result instanceof Array) {
-        return [...acc, result.join('\n')];
-      }
-      return [...acc, result];
-    }, []).join('\n');
+    const newArr = arr.reduce((acc, obj) => [...acc, propperString[obj.type](obj)], []);
+    return _.flatten(newArr).join('\n');
   };
+
   return `{\n${iter(ast, 0)}\n}\n`;
 };
 
