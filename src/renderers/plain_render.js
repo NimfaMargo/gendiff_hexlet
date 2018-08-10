@@ -12,17 +12,16 @@ const stringify = (value) => {
 const render = (ast) => {
   const iter = (arr, parentKey) => {
     const fullKey = obj => [...parentKey, obj.key];
-    const beginStr = obj => `Property '${fullKey(obj).join('.')}'`;
+    const makeBegining = obj => `Property '${fullKey(obj).join('.')}'`;
 
     const propperString = {
-      same: obj => `${beginStr(obj)} was the same`,
-      new: obj => `${beginStr(obj)} was added with value: ${stringify(obj.value)}`,
-      changed: obj => `${beginStr(obj)} was updated. From ${stringify(obj.value1)} to ${stringify(obj.value2)}`,
-      deleted: obj => `${beginStr(obj)} was removed`,
+      same: obj => `${makeBegining(obj)} was the same`,
+      new: obj => `${makeBegining(obj)} was added with value: ${stringify(obj.value)}`,
+      changed: obj => `${makeBegining(obj)} was updated. From ${stringify(obj.value1)} to ${stringify(obj.value2)}`,
+      deleted: obj => `${makeBegining(obj)} was removed`,
       object: obj => iter(obj.children, fullKey(obj)),
     };
-    const newArr = arr.reduce((acc, obj) => [...acc, propperString[obj.type](obj)], []);
-    return _.flatten(newArr).join('\n');
+    return arr.reduce((acc, obj) => [...acc, propperString[obj.type](obj)], []).join('\n');
   };
 
   return `${iter(ast, [])}\n`;
