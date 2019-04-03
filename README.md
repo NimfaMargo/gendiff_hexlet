@@ -7,7 +7,7 @@ An utility, that compares two configuration files and shows the difference.
 
 #### Useful features:
 - Support multiple formats.
-- Report generation in plain text, pretty and JSON formats.
+- Generate report in plain text, pretty and JSON formats.
 
 ## INSTALL
 You need npm. It is bundled with [node](https://nodejs.org/en/download/)
