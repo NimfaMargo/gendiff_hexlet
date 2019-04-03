@@ -2,21 +2,21 @@
 
 [![Build Status](https://travis-ci.com/NimfaMargo/gendiff_hexlet.svg?branch=master)](https://travis-ci.com/NimfaMargo/gendiff_hexlet)
 
-### Diff calculator
+## Diff calculator
 An utility, that compares two configuration files and shows the difference.
 
 #### Useful features:
 - Support multiple formats.
 - Generate report in plain text, pretty and JSON formats.
 
-## INSTALL
+## Install
 You need npm. It is bundled with [node](https://nodejs.org/en/download/)
 
 ```
 $ npm i -g diff_calculator_margo
 ```                               
 
-## USAGE
+## Usage
 ```
 Usage:
 $ gendiff --format[type] <first-file> <second-file>
@@ -33,7 +33,7 @@ Options:
   -h, --help           output usage information
 ```   
 
-## EXAMPLE
+## Example
 ```   
 $ gendiff --format plain first-config.ini second-config.ini
 Setting "common.setting2" deleted.
@@ -42,7 +42,7 @@ Setting "group1.baz" changed from "bas" to "bars".
 Section "group2" deleted.
 ```   
 
-## UNINSTALL
+## Uninstall
 ```
 $ npm uninstall -g diff_calculator_margo
 ```    
