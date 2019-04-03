@@ -15,10 +15,7 @@ You need npm. It is bundled with [node](https://nodejs.org/en/download/)
 ```
 $ npm i -g diff_calculator_margo
 ```                               
-## OUTPUT USAGE INFORMATION
-```
-$ gendiff --help
-```      
+
 ## USAGE
 ```
 Usage:
@@ -36,7 +33,7 @@ Options:
   -h, --help           output usage information
 ```   
 
-## USAGE EXAMPLE
+## EXAMPLE
 ```   
 $ gendiff --format plain first-config.ini second-config.ini
 Setting "common.setting2" deleted.
