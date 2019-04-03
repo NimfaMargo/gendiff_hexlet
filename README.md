@@ -5,7 +5,7 @@
 ### Diff calculator
 An utility, that compares two configuration files and shows the difference.
 
-####Useful features:
+#### Useful features:
 - Support multiple formats.
 - Report generation in plain text, pretty and JSON formats.
 
