@@ -30,6 +30,10 @@
   },
   "author": "Nikiforova Margarita",
   "license": "ISC",
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:NimfaMargo/gendiff_hexlet.git"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
